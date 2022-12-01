@@ -1,15 +1,37 @@
-function Shape({ color, handleChange, children, style, size }) {
+function Shape({ color, size, handleChange, children }) {
+  console.log(color, size, handleChange, children);
   return (
     <div>
       <div>
-        <label>{children} size</label>
-        <input type={number} value={size} />
+        <label>{children} Size</label>
+        <input
+          type="number"
+          name={`${children.toLowerCase()}Size`}
+          onChange={handleChange}
+        />
       </div>
       <div>
-        <label></label>
-        <input />
+        <label>{children} color</label>
+        <input
+          type="color"
+          name={`${children.toLowerCase()}Color`}
+          onChange={handleChange}
+        />
       </div>
-      <div></div>
+      <div
+        style={{
+          width: `${size}px`,
+          height: `${size}px`,
+        }}
+      >
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            background: `${color}`,
+          }}
+        ></div>
+      </div>
     </div>
   );
 }
