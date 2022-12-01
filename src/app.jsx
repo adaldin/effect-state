@@ -15,8 +15,10 @@ export function App() {
 
   useEffect(() => {
     if (
-      circle.circleSize === triangle.triangleSize &&
-      circle.circleSize === square.squareSize
+      (circle.circleSize === triangle.triangleSize &&
+        circle.circleSize === square.squareSize) ||
+      (circle.circleColor === triangle.triangleColor &&
+        circle.circleColor === square.squareColor)
     ) {
       alert('Shape sizes are equal');
     }
