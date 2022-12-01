@@ -56,94 +56,44 @@ export function App() {
     <div>
       <h4>Ejercicio useEffect useState.</h4>
       <form>
-        <div>
-          <div>
-            <label>Triangle size</label>
-            <input
-              type="number"
-              name="triangleSize"
-              onChange={handleTriangle}
-            />
-          </div>
-          <div>
-            <label>Triangle color</label>
-            <input
-              type="color"
-              name="triangleColor"
-              onChange={handleTriangle}
-            />
-          </div>
-          <div
-            style={{
-              width: `${triangle.triangleSize}px`,
-              height: `${triangle.triangleSize}px`,
-            }}
-          >
-            <div
-              style={{
-                width: `0`,
-                heigth: "0",
-                borderBottom: `${triangle.triangleSize}px solid ${triangle.triangleColor}`,
-                borderLeft: `${triangle.triangleSize / 2}px solid white`,
-                borderRight: `${triangle.triangleSize / 2}px solid white`,
-              }}
-            ></div>
-          </div>
-        </div>
-        <div>
-          <label>Circle size</label>
-          <input type="number" name="circleSize" onChange={handleCircle} />
-        </div>
-        <div>
-          <label>Circle color</label>
-          <input type="color" name="circleColor" onChange={handleCircle} />
-        </div>
-        <div
-          style={{
-            width: `${circle.circleSize}px`,
-            height: `${circle.circleSize}px`,
+        <Shape
+          color={triangle.triangleColor}
+          size={triangle.triangleSize}
+          handleChange={handleTriangle}
+          shapeStyle={{
+            width: `0`,
+            heigth: "0",
+            borderBottom: `${triangle.triangleSize}px solid ${triangle.triangleColor}`,
+            borderLeft: `${triangle.triangleSize / 2}px solid white`,
+            borderRight: `${triangle.triangleSize / 2}px solid white`,
           }}
         >
-          <div
-            style={{
-              width: "100%",
-              height: "100%",
-              background: `${circle.circleColor}`,
-              borderRadius: "50%",
-            }}
-          ></div>
-        </div>
-        <div>
-          <label>Square size</label>
-          <input type="number" name="squareSize" onChange={handleSquare} />
-        </div>
-        <div>
-          <label>Square color</label>
-          <input type="color" name="squareColor" onChange={handleSquare} />
-        </div>
-        <div
-          style={{
-            width: `${square.squareSize}px`,
-            height: `${square.squareSize}px`,
+          Triangle
+        </Shape>
+
+        <Shape
+          color={circle.circleColor}
+          size={circle.circleSize}
+          handleChange={handleCircle}
+          shapeStyle={{
+            width: "100%",
+            height: "100%",
+            background: `${circle.circleColor}`,
+            borderRadius: "50%",
           }}
         >
-          <div
-            style={{
-              width: "100%",
-              height: "100%",
-              background: `${square.squareColor}`,
-            }}
-          ></div>
-        </div>
+          Circle
+        </Shape>
+
         <Shape
           color={square.squareColor}
           size={square.squareSize}
           handleChange={handleSquare}
-          style={
+          shapeStyle={{
             width: "100%",
             height: "100%",
-            background: `${color}`,
-          }
+            background: `${square.squareColor}`,
+          }}
         >
           Square
         </Shape>

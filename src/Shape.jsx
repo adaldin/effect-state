@@ -1,5 +1,4 @@
-function Shape({ color, size, handleChange, children }) {
-  console.log(color, size, handleChange, children);
+function Shape({ color, size, handleChange, children, shapeStyle }) {
   return (
     <div>
       <div>
@@ -8,6 +7,7 @@ function Shape({ color, size, handleChange, children }) {
           type="number"
           name={`${children.toLowerCase()}Size`}
           onChange={handleChange}
+          placeholder={size}
         />
       </div>
       <div>
@@ -24,13 +24,7 @@ function Shape({ color, size, handleChange, children }) {
           height: `${size}px`,
         }}
       >
-        <div
-          style={{
-            width: "100%",
-            height: "100%",
-            background: `${color}`,
-          }}
-        ></div>
+        <div style={shapeStyle}></div>
       </div>
     </div>
   );
