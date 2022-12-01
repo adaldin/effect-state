@@ -1,4 +1,4 @@
-function Shape({ color, size, handleChange, children, shapeStyle }) {
+function Shape({ size, handleChange, children, shapeStyle }) {
   return (
     <div>
       <div>
