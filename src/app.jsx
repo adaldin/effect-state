@@ -1,15 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import Shape from "./Shape";
 export function App() {
   const [triangle, setTriangle] = useState({
-    triangleColor: 'black',
+    triangleColor: "black",
     triangleSize: 100,
   });
   const [circle, setCircle] = useState({
-    circleColor: 'red',
+    circleColor: "red",
     circleSize: 50,
   });
   const [square, setSquare] = useState({
-    squareColor: 'blue',
+    squareColor: "blue",
     squareSize: 60,
   });
 
@@ -20,7 +21,7 @@ export function App() {
       (circle.circleColor === triangle.triangleColor &&
         circle.circleColor === square.squareColor)
     ) {
-      alert('Shape sizes are equal');
+      alert("Shape sizes are equal");
     }
   }, [circle, triangle, square]);
   // const handleChange = (e) => {
@@ -81,7 +82,7 @@ export function App() {
             <div
               style={{
                 width: `0`,
-                heigth: '0',
+                heigth: "0",
                 borderBottom: `${triangle.triangleSize}px solid ${triangle.triangleColor}`,
                 borderLeft: `${triangle.triangleSize / 2}px solid white`,
                 borderRight: `${triangle.triangleSize / 2}px solid white`,
@@ -105,10 +106,10 @@ export function App() {
         >
           <div
             style={{
-              width: '100%',
-              height: '100%',
+              width: "100%",
+              height: "100%",
               background: `${circle.circleColor}`,
-              borderRadius: '50%',
+              borderRadius: "50%",
             }}
           ></div>
         </div>
@@ -128,12 +129,24 @@ export function App() {
         >
           <div
             style={{
-              width: '100%',
-              height: '100%',
+              width: "100%",
+              height: "100%",
               background: `${square.squareColor}`,
             }}
           ></div>
         </div>
+        <Shape
+          color={square.squareColor}
+          size={square.squareSize}
+          handleChange={handleSquare}
+          style={
+            width: "100%",
+            height: "100%",
+            background: `${color}`,
+          }
+        >
+          Square
+        </Shape>
       </form>
     </div>
   );
