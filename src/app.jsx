@@ -24,13 +24,7 @@ export function App() {
       alert("Shape sizes are equal");
     }
   }, [circle, triangle, square]);
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   console.log(value);
-  //   setformShape((prevShape) => {
-  //     return { ...prevShape, [name]: value };
-  //   });
-  // };
+
   const handleTriangle = (e) => {
     const { name, value } = e.target;
     console.log(value);
