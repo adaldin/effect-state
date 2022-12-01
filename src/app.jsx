@@ -24,7 +24,7 @@ export function App() {
       circle.circleColor === triangle.triangleColor &&
       circle.circleColor === square.squareColor
     ) {
-      alert("Shape sizes are equal");
+      alert("Shape colors are equal");
     }
   }, [circle, triangle, square]);
 
