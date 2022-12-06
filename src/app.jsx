@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import Shape from "./Shape";
+
+// Al tener toda la lógica en un mismo componente se vuelve dificil de leer.
+// Crearia los siguientes componentes en atoms: Label, InputNumber, InputColor, Triangle, Square y Circle.
+// Crearia componentes/hooks para agrupar y reutilizar lógica.
 export function App() {
+  // Puedes usar un state para cada valor, aunque esta bien
   const [triangle, setTriangle] = useState({
     triangleColor: "black",
     triangleSize: 100,
@@ -30,7 +35,7 @@ export function App() {
 
   const handleTriangle = (e) => {
     const { name, value } = e.target;
-    console.log(value);
+    console.log(value); // Eliminar console.log()
     setTriangle((prevShape) => {
       return { ...prevShape, [name]: value };
     });
