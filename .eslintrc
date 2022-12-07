@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    "react-app",
+    "react-app/jest",
+    "prettier"
+  ],
+  "rules": {
+    "import/prefer-default-export": "off"
+  }
+}

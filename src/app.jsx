@@ -1,59 +1,57 @@
-import { useState, useEffect } from "react";
-import Shape from "./Shape";
+import { useState, useEffect } from 'react'
+import Shape from './Shape'
 
 // Al tener toda la lógica en un mismo componente se vuelve dificil de leer.
-// Crearia los siguientes componentes en atoms: Label, InputNumber, InputColor, Triangle, Square y Circle.
+// Crearia los siguientes componentes en atoms: Label,
+// InputNumber, InputColor, Triangle, Square y Circle.
 // Crearia componentes/hooks para agrupar y reutilizar lógica.
 export function App() {
   // Puedes usar un state para cada valor, aunque esta bien
   const [triangle, setTriangle] = useState({
-    triangleColor: "black",
+    triangleColor: 'black',
     triangleSize: 100,
-  });
+  })
   const [circle, setCircle] = useState({
-    circleColor: "red",
+    circleColor: 'red',
     circleSize: 50,
-  });
+  })
   const [square, setSquare] = useState({
-    squareColor: "blue",
+    squareColor: 'blue',
     squareSize: 60,
-  });
+  })
 
   useEffect(() => {
     if (
       circle.circleSize === triangle.triangleSize &&
       circle.circleSize === square.squareSize
     ) {
-      alert("Shape sizes are equal");
+      alert('Shape sizes are equal')
     } else if (
       circle.circleColor === triangle.triangleColor &&
       circle.circleColor === square.squareColor
     ) {
-      alert("Shape colors are equal");
+      alert('Shape colors are equal')
     }
-  }, [circle, triangle, square]);
+  }, [circle, triangle, square])
 
   const handleTriangle = (e) => {
-    const { name, value } = e.target;
-    console.log(value); // Eliminar console.log()
+    const { name, value } = e.target
     setTriangle((prevShape) => {
-      return { ...prevShape, [name]: value };
-    });
-  };
+      return { ...prevShape, [name]: value }
+    })
+  }
   const handleCircle = (e) => {
-    const { name, value } = e.target;
-    console.log(value);
+    const { name, value } = e.target
     setCircle((prevShape) => {
-      return { ...prevShape, [name]: value };
-    });
-  };
+      return { ...prevShape, [name]: value }
+    })
+  }
   const handleSquare = (e) => {
-    const { name, value } = e.target;
-    console.log(value);
+    const { name, value } = e.target
     setSquare((prevShape) => {
-      return { ...prevShape, [name]: value };
-    });
-  };
+      return { ...prevShape, [name]: value }
+    })
+  }
   return (
     <div>
       <h4>Ejercicio useEffect useState.</h4>
@@ -64,7 +62,7 @@ export function App() {
           handleChange={handleTriangle}
           shapeStyle={{
             width: `0`,
-            heigth: "0",
+            heigth: '0',
             borderBottom: `${triangle.triangleSize}px solid ${triangle.triangleColor}`,
             borderLeft: `${triangle.triangleSize / 2}px solid white`,
             borderRight: `${triangle.triangleSize / 2}px solid white`,
@@ -78,10 +76,10 @@ export function App() {
           size={circle.circleSize}
           handleChange={handleCircle}
           shapeStyle={{
-            width: "100%",
-            height: "100%",
+            width: '100%',
+            height: '100%',
             background: `${circle.circleColor}`,
-            borderRadius: "50%",
+            borderRadius: '50%',
           }}
         >
           Circle
@@ -92,8 +90,8 @@ export function App() {
           size={square.squareSize}
           handleChange={handleSquare}
           shapeStyle={{
-            width: "100%",
-            height: "100%",
+            width: '100%',
+            height: '100%',
             background: `${square.squareColor}`,
           }}
         >
@@ -101,5 +99,5 @@ export function App() {
         </Shape>
       </form>
     </div>
-  );
+  )
 }
