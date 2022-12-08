@@ -4,7 +4,6 @@
     "airbnb/hooks",
     "airbnb-typescript",
     "react-app",
-    "react-app/jest",
     "prettier"
   ],
   "rules": {

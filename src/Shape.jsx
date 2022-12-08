@@ -30,6 +30,6 @@ function Shape({ size, handleChange, children, shapeStyle }) {
         <div style={shapeStyle}></div>
       </div>
     </div>
-  );
+  )
 }
-export default Shape;
+export default Shape
